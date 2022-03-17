@@ -78,4 +78,30 @@ console.log(companyNames);
 
 
 // sort 
+const sortedCompanies = companies.sort(function(c1,c2){
+    if(c1.start > c2.start){
+        return 1;
+    } else {
+        return -1;
+    }
+});
+
+console.log(sortedCompanies);
+
+const sortedCompanies2 = companies.sort(function(c1,c2){
+    if(c1.end > c2.end){
+        return 1;
+    } else {
+        return -1;
+    }
+});
+
+console.log(sortedCompanies2);
+ 
+const sortedCompanies3= companies.sort((c1,c2) => (c1.start > c2.start ? 1 : -1));
+
+console.log(sortedCompanies3);
+
+
+
 // reduce 
