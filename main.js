@@ -78,6 +78,8 @@ console.log(companyNames);
 
 
 // sort 
+// Sort companies by start year
+
 const sortedCompanies = companies.sort(function(c1,c2){
     if(c1.start > c2.start){
         return 1;
@@ -102,6 +104,33 @@ const sortedCompanies3= companies.sort((c1,c2) => (c1.start > c2.start ? 1 : -1)
 
 console.log(sortedCompanies3);
 
+// Sort ages
 
+const sortAges = ages.sort((a,b) => a-b );
+console.log(sortAges);
 
 // reduce 
+
+let ageSum2=0
+for(let i = 0 ; i<ages.length; i++){
+    ageSum+=ages[i];
+}
+
+// const ageSum = ages.reduce(function(total,age) {
+//     return total + age ;
+// },0);
+
+const ageSum = ages.reduce((total, age) => total+age, 0);
+
+console.log(ageSum);
+
+//get total years for all companies
+
+const totalYears = companies.reduce((total,companies) => total+(companies.end-companies.start)); 
+
+console.log(totalYears);
+
+const totalYears2 = companies.reduce(function(total, company){
+    return total + (company.end - company.start);
+}, 0);
+ 
